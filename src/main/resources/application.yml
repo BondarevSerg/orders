@@ -1,0 +1,14 @@
+server:
+  port : 8080
+#Kafka Topic
+spring:
+  kafka:
+    # Перечисляем всех наших брокеров
+    bootstrap-servers: localhost:9092
+    producer:
+      # Настраиваем сериализацию сообщений
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      bootstrap-servers: localhost:9092
+    topic:
+      name: order_details
