@@ -17,7 +17,8 @@ import ru.bondarev.orders.dto.OrderDTO;
 @Service
 public class KafkaProducer {
 
-    private String topicName="order_details";
+    @Value("${spring.kafka.topic-json.name}")
+    private String topicName;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaProducer.class);
     private   KafkaTemplate<String, OrderDTO> kafkaTemplate;
